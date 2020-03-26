@@ -1,0 +1,74 @@
+
+<!--<?php
+/*
+require 'database.php'
+
+$message = '';
+
+  if (!empty($_POST['name']) &&!empty($_POST['email']) && !empty($_POST['password'])) {
+    $sql = "INSERT INTO users (name,email, password) VALUES (:name,:email, :password)";
+    $stmt = $conn->prepare($sql);
+    
+    $stmt->bindParam(':name', $_POST['name']);
+    $stmt->bindParam(':email', $_POST['email']);
+    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+    $stmt->bindParam(':password', $password);
+
+    if ($stmt->execute()) {
+      $message = 'Successfully created new user';
+    } else {
+      $message = 'Sorry there must have been an issue creating your account';
+    }
+  }
+*/
+?>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Singup</title>
+    <link rel="stylesheet" type="text/css" href="../assets/master2.css">
+</head>
+<body>
+    
+    <div class="login-box">
+     <a href="#">   <img class="avatar" src="../img/shop.png" alt="logo" ></a>
+     <!--
+     <?php if(!empty($message)): ?>
+      <p> <?= $message ?></p>
+    <?php endif; ?>
+-->
+        <h1>Create Account</h1>
+
+        <form>
+            <!--Nombre Usuario-->
+            <label for="name">Enter your Username</label>
+            <input type="text" name="name" placeholder="Enter your Username">
+            <!--/Nombre Usuario-->
+            <!--Email-->
+            <label for="email">Enter your email</label>
+            <input type="email" name="email" class="email" placeholder="Enter your Email">
+            <!--/Email-->
+            <!--Contrasena-->
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="Enter Password">
+            <!--/Contrasena-->
+            <!--Repetir Contrasena-->
+            <label for="password">Repeat Password</label>
+            <input type="password" name="confirm_password" placeholder="Confirm Your Password">
+            <!--/Repetir Contrasena-->
+
+            <input type="submit" value="Enviar">
+
+            <a href="login.html">Login</a>
+        </form>
+    </div>
+    <div class="footer">
+        <hr>
+        <footer>&#169; 2020 Por Carlos Ochoa</footer>
+    </div>
+</body>
+</html>
